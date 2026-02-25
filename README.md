@@ -42,3 +42,4 @@ A modern, responsive, and visually clean web application to track personal expen
 ## Additional Steps
 - **Add Categories:** You might want to create categories like "Food", "Travel", "Rent", etc., via the Django admin panel (`http://127.0.0.1:8000/admin/`). First, create a superuser using `python manage.py createsuperuser`.
 
+"# Expense-Pocket" 
