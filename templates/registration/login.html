@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login - Athex FinTrack{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5 mb-5 align-items-center" style="min-height: 70vh;">
+    <div class="col-md-6 col-lg-5 col-xl-4">
+        <!-- Main Form Card -->
+        <div class="glass-card text-center p-5 shadow-lg position-relative overflow-hidden"
+            style="border-radius: 24px; border: 1px solid rgba(255,255,255,0.6);">
+
+            <!-- Decorative Backglows for premium effect -->
+            <div
+                style="position: absolute; top: -50px; left: -50px; width: 180px; height: 180px; background: rgba(79, 70, 229, 0.12); border-radius: 50%; filter: blur(40px);">
+            </div>
+            <div
+                style="position: absolute; bottom: -50px; right: -50px; width: 180px; height: 180px; background: rgba(16, 185, 129, 0.12); border-radius: 50%; filter: blur(40px);">
+            </div>
+
+            <div class="mb-4 position-relative z-1">
+                <div class="mx-auto mb-3 shadow-sm d-flex justify-content-center align-items-center"
+                    style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(79,70,229,0.05)); border-radius: 20px; border: 1px solid rgba(79,70,229,0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--primary)"
+                        class="bi bi-shield-lock" viewBox="0 0 16 16">
+                        <path
+                            d="M5.338 1.59a60 60 0 0 0-2.836.856.8.8 0 0 0-.328.24c-.201.24-.311.514-.38.835-.12.559-.196 1.433-.23 2.502-.036 1.139-.036 2.51 0 3.65.034 1.07.11 1.943.23 2.502.069.321.179.595.38.834.116.139.231.22.328.241a60 60 0 0 0 2.836.856c.922.26 1.83.504 2.68.741.85-.237 1.758-.481 2.68-.74a60 60 0 0 0 2.836-.857c.097-.021.212-.102.328-.24.201-.24.311-.514.38-.835.12-.559.196-1.433.23-2.502.036-1.139.036-2.51 0-3.65-.034-1.07-.11-1.943-.23-2.502-.069-.321-.179-.595-.38-.834a.8.8 0 0 0-.328-.241 60 60 0 0 0-2.836-.856C9.83 1.086 8.922.842 8.072.605 7.222.842 6.314 1.086 5.338 1.59zM8 2.394c.822.222 1.636.44 2.355.632.748.2 1.428.374 2.016.517-.03.882-.04 1.914-.016 2.977.025 1.144.11 2.115.275 2.871.1.472.233.725.338.852a.3.3 0 0 1-.06.071c-.26.241-.659.56-1.156.915-.559.398-1.224.81-1.948 1.2M8 13.91l-.226-.145c-.51-.33-1.09-.711-1.644-1.109a15 15 0 0 1-1.948-1.2c-.22-.178-.44-.376-.645-.583A.3.3 0 0 1 3.5 10.8c.105-.127.238-.38.338-.853.166-.755.251-1.726.276-2.87.025-1.063.015-2.095-.015-2.977.588-.143 1.268-.316 2.016-.516C6.836 2.834 7.65 2.616 8 2.394z" />
+                        <path d="M5.5 8.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                </div>
+                <h2 class="text-primary fw-bold mb-1" style="letter-spacing: -0.5px;">Welcome Back</h2>
+                <p class="text-muted small">Smart expense management powered by simplicity.</p>
+            </div>
+
+            <form method="post" class="position-relative z-1 mt-4 text-start">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    <input type="text" name="username" class="form-control shadow-none" id="usernameInput"
+                        placeholder="Username" required autofocus
+                        style="background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; height: 58px;">
+                    <label for="usernameInput" class="text-muted small">Username</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" name="password" class="form-control shadow-none" id="passwordInput"
+                        placeholder="Password" required
+                        style="background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; height: 58px;">
+                    <label for="passwordInput" class="text-muted small">Password</label>
+                </div>
+
+                <button type="submit" class="btn w-100 mb-4 py-3 fw-bold shadow-sm"
+                    style="background-color: #10B981; color: white; border: none; border-radius: 12px; font-size: 1.05rem; letter-spacing: 0.5px;">
+                    Secure Login
+                </button>
+            </form>
+
+            <div class="position-relative z-1 pt-3" style="border-top: 1px solid rgba(0,0,0,0.05);">
+                <p class="text-muted small mb-0">Don't have an account? <br class="d-md-none"><a
+                        href="{% url 'register' %}" class="text-primary text-decoration-none fw-bold"
+                        style="letter-spacing: 0.2px;">Register here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

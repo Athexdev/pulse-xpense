@@ -1,0 +1,90 @@
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --bg-light: #F3F4F6;
+    --bg-white: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --danger: #EF4444;
+    --success: #10B981;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+}
+
+/* Modern Navbar */
+.navbar-custom {
+    background: var(--bg-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+/* PocketPulse Branding */
+.logo {
+    font-size: 32px;
+    margin: 0;
+}
+
+.pocket {
+    color: #2D9CDB;
+    font-weight: 600;
+}
+
+.pulse {
+    color: #27AE60;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #555;
+    margin-top: -2px;
+    font-weight: 500;
+}
+
+/* Vibrant Buttons */
+.btn-primary-custom {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+/* Forms */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}

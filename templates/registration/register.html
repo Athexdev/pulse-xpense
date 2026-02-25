@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - Athex FinTrack{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5 mb-5 align-items-center" style="min-height: 70vh;">
+    <div class="col-md-6 col-lg-5 col-xl-4">
+        <!-- Main Form Card -->
+        <div class="glass-card p-5 shadow-lg position-relative overflow-hidden"
+            style="border-radius: 24px; border: 1px solid rgba(255,255,255,0.6);">
+
+            <!-- Decorative Backglows for premium effect -->
+            <div
+                style="position: absolute; top: -50px; right: -50px; width: 180px; height: 180px; background: rgba(16, 185, 129, 0.12); border-radius: 50%; filter: blur(40px);">
+            </div>
+            <div
+                style="position: absolute; bottom: -50px; left: -50px; width: 180px; height: 180px; background: rgba(79, 70, 229, 0.12); border-radius: 50%; filter: blur(40px);">
+            </div>
+
+            <div class="mb-4 text-center position-relative z-1">
+                <div class="mx-auto mb-3 shadow-sm d-flex justify-content-center align-items-center"
+                    style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05)); border-radius: 20px; border: 1px solid rgba(16,185,129,0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--success)"
+                        class="bi bi-person-plus" viewBox="0 0 16 16">
+                        <path
+                            d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                        <path fill-rule="evenodd"
+                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                    </svg>
+                </div>
+                <h2 class="text-primary fw-bold mb-1" style="letter-spacing: -0.5px;">Create an Account</h2>
+                <p class="text-muted small">Smart expense management powered by simplicity.</p>
+            </div>
+
+            <form method="post" class="position-relative z-1 mt-4">
+                {% csrf_token %}
+                <div class="register-form-wrapper" style="font-size: 0.95rem;">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary-custom w-100 mt-2 mb-4 py-3 fw-bold shadow-sm"
+                    style="border-radius: 12px; font-size: 1.05rem; letter-spacing: 0.5px;">
+                    Register Now
+                </button>
+            </form>
+
+            <div class="text-center position-relative z-1 pt-3" style="border-top: 1px solid rgba(0,0,0,0.05);">
+                <p class="text-muted small mb-0">Already have an account? <br class="d-md-none"><a
+                        href="{% url 'login' %}" class="text-primary text-decoration-none fw-bold"
+                        style="letter-spacing: 0.2px;">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Premium overrides for django generated register form */
+    .register-form-wrapper input {
+        background: rgba(255, 255, 255, 0.7) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        border-radius: 12px !important;
+        height: 48px !important;
+        width: 100% !important;
+        padding: 0.5rem 1rem !important;
+        box-shadow: none !important;
+        margin-bottom: 0.5rem;
+        transition: border-color 0.2s;
+    }
+
+    .register-form-wrapper input:focus {
+        border-color: var(--primary) !important;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+        outline: none;
+    }
+
+    .register-form-wrapper label {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+
+    .register-form-wrapper ul.helptext,
+    .register-form-wrapper ul.errorlist {
+        font-size: 0.75rem;
+        color: #adb5bd;
+        padding-left: 1rem;
+        margin-top: -0.25rem;
+        margin-bottom: 1rem;
+        list-style-type: none;
+    }
+
+    .register-form-wrapper ul.errorlist {
+        color: var(--danger);
+    }
+</style>
+{% endblock %}
