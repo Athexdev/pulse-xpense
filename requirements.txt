@@ -1,2 +1,2 @@
 gunicorn
-django 4.2
+django
